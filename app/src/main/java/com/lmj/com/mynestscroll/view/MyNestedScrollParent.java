@@ -78,7 +78,12 @@ public class MyNestedScrollParent extends LinearLayout implements NestedScrollin
         setMeasuredDimension(getMeasuredWidth(), topView.getMeasuredHeight() + centerView.getMeasuredHeight() + contentView.getMeasuredHeight());
     }
 
-
+    /**
+     * 子布局开始滑动的时候 会回父布局的此方法
+     * 告诉父布局 要开始滑动了
+     * 如果返回----- false 则不会嵌套滑动 直接交给子类去消费滑动事件
+     * 如果返回------true 则会开始嵌套滑动
+     */
     @Override
     public boolean onStartNestedScroll(@NonNull View child, @NonNull View target, int nestedScrollAxes) {
         Log.i(Tag, "onStartNestedScroll--" + "child:" + child + ",target:" + target + ",nestedScrollAxes:" + nestedScrollAxes);
@@ -177,26 +182,26 @@ public class MyNestedScrollParent extends LinearLayout implements NestedScrollin
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        Log.i("aaa", "getY():getRawY:" + event.getRawY());
-
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                mLastTouchY = (int) (event.getRawY() + 0.5f);
-
-                break;
-            case MotionEvent.ACTION_MOVE:
-                int y = (int) (event.getRawY() + 0.5f);
-                int dy = mLastTouchY - y;
-                mLastTouchY = y;
-                if (showImg(dy) || hideImg(dy)) {//如果父亲自己要滑动
-                    scrollBy(0, dy);
-                }
-                break;
-            case MotionEvent.ACTION_UP:
-
-                break;
-        }
-
+//        Log.i("aaa", "getY():getRawY:" + event.getRawY());
+//
+//        switch (event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                mLastTouchY = (int) (event.getRawY() + 0.5f);
+//
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                int y = (int) (event.getRawY() + 0.5f);
+//                int dy = mLastTouchY - y;
+//                mLastTouchY = y;
+////                if (showImg(dy) || hideImg(dy)) {//如果父亲自己要滑动
+////                    scrollBy(0, dy);
+////                }
+//                break;
+//            case MotionEvent.ACTION_UP:
+//
+//                break;
+//        }
+//
 
         return super.dispatchTouchEvent(event);
     }

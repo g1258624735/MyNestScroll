@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true"
-        android:background="#0f0"
         android:orientation="vertical">
 
         <ImageView
@@ -20,9 +19,11 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#f0f"
-            android:text="@string/topStr" />
+            android:layout_height="40dp"
+            android:background="@android:color/holo_orange_dark"
+            android:gravity="center"
+            android:text="@string/topStr"
+            android:textColor="@android:color/white" />
 
         <com.lmj.com.mynestscroll.view.MyNestedScrollChild
             android:layout_width="match_parent"
@@ -30,7 +31,7 @@
             android:orientation="vertical">
 
 
-        <LinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -41,38 +42,39 @@
                     android:text="@string/contenttv"
                     android:textColor="#f0f" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/button2"
-                android:layout_gravity="center_horizontal" />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="New Button" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/contenttv"
-                android:textColor="#f0f" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/contenttv"
-                android:textColor="#f0f" />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="New Button"
-                />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contenttv"
+                    android:textColor="#f0f" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contenttv"
+                    android:textColor="#f0f" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="New Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="New Button" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="New Button" />
             </LinearLayout>
         </com.lmj.com.mynestscroll.view.MyNestedScrollChild>
         <!--<com.lmj.com.mynestscroll.view.MyNestedScrollChild-->
